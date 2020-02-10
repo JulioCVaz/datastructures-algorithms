@@ -1,24 +1,17 @@
+/**
+ * 
+ * Ratiorg got statues of different sizes as a present from CodeMaster for his birthday, each statue having an non-negative integer size. Since he likes to make things perfect, he wants to arrange them from smallest to largest so that each statue will be bigger than the previous one exactly by 1. He may need some additional statues to be able to accomplish that. Help him figure out the minimum number of additional statues needed.
+ * 
+ */
+
 function makeArrayConsecutive2(statues) {
-    let nArr = [];
-    for(let i = Math.min(...statues); i < Math.max(...statues); i++){
-      nArr.push(i);
-    }
-    console.log(nArr);
+  let nArr = [];
+  let count = 0;
+  for(let i = Math.min(...statues); i < Math.max(...statues); i++){
+    nArr.push(i);
+  }
+  for(let i in nArr){
+    if(nArr.indexOf(statues[i]) === -1) count++; 
+  }
+  return count;
 }
-
-makeArrayConsecutive2([6, 2, 3, 8]);
-
-// check how to make this
-// function differenceOf2Arrays (array1, array2) {
-// var temp = [];
-// array1 = array1.toString().split(',').map(Number);
-// array2 = array2.toString().split(',').map(Number);
-
-// for (var i in array1) {
-// if(array2.indexOf(array1[i]) === -1) temp.push(array1[i]);
-// }
-// for(i in array2) {
-// if(array1.indexOf(array2[i]) === -1) temp.push(array2[i]);
-// }
-// return temp.sort((a,b) => a-b);
-// }
