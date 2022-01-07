@@ -5,10 +5,10 @@
 function fibonacci() {
   let next,
     i = 1;
-  let sequence = [1, 2];
+  let sequence = [1];
 
   for (i; i <= 4000000; i++) {
-    next = sequence[i - 1] + i - 1;
+    next = sequence[i - 1] + i;
     sequence.push(next);
   }
 
