@@ -13,4 +13,4 @@ function sumMultiples(n = 1000) {
   return multiples;
 }
 
-console.log(sumMultiples());
+sumMultiples();
