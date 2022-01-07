@@ -13,7 +13,7 @@ this repository aims to study and practice data structure and algorithms
 
 ## Books
 
-- Data structures and algorithms in javascript - Loiane Groner
+- [Data structures and algorithms in javascript](https://www.amazon.com.br/Estruturas-Dados-Algoritmos-Javascript-Habilidades/dp/8575225537) - Loiane Groner
 
 ## Courses
 
