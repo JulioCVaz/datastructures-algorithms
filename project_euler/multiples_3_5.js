@@ -2,15 +2,15 @@
 // Find the sum of all the multiples of 3 or 5 below 1000.
 
 function sumMultiples(n = 1000) {
-  let multiples = [];
+  let multiples = 0;
 
   for (let i = 1; i < n; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
-      multiples.push(i);
+      multiples = multiples + i;
     }
   }
 
-  return multiples.reduce((prev, curr) => prev + curr);
+  return multiples;
 }
 
-sumMultiples();
+console.log(sumMultiples());
