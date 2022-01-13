@@ -2,21 +2,34 @@
 // 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-function fibonacci() {
+function fibonacci(n) {
   let next,
-    i = 1;
-  let sequence = [1];
+    prev,
+    i = 0,
+    j = 0,
+    accumulated = 0,
+    sequence = [1];
 
-  for (i; i <= 4000000; i++) {
-    next = sequence[i - 1] + i;
-    sequence.push(next);
+  for (i; i < n; i++) {
+    if (i === 0) {
+      sequence.push(sequence[i] + 1);
+    } else if (sequence[i] < n) {
+      prev = sequence[i - 1];
+      next = prev + sequence[i];
+
+      if (next > n) break;
+
+      sequence.push(next);
+    }
   }
 
-  return sequence;
+  for (j; j < sequence.length; j++) {
+    if (sequence[j] % 2 === 0) {
+      accumulated = accumulated + sequence[j];
+    }
+  }
 
-  return sequence.reduce((prev, current) =>
-    current % 2 === 0 ? prev + current : prev
-  );
+  return accumulated;
 }
 
-console.log(fibonacci());
+fibonacci(4000000);
